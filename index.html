@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="gridContained">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="scoreboard">
+    <p>Player (X): <span id="playerScore">0</span></p>
+    <p>System (O): <span id="systemScore">0</span></p>
+  </div>
+
+<div class="controls">
+  <button id="restartGame">Restart Game</button>
+  <button id="clearScores">Clear Scores</button>
+  <p>Rounds Played: <span id="rounds">0</span></p>
+  <label for="difficulty">Difficulty:</label>
+  <select id="difficulty" style="font-size: 14px; padding: 0.5em 1em; font-size: 16px; cursor: pointer; border: 1px solid forestgreen; background-color: white; color: forestgreen; border-radius: 4px;">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+</div>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>

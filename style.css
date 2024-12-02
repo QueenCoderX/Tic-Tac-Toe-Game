@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+.gridContained {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+  row-gap: 2px;
+  column-gap: 4px;
+}
+
+.gridContained div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid forestgreen;
+  width: 80px;
+  height: 70px;
+  font-size: 32px;
+  font-weight: bold;
+  color: forestgreen;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.gridContained div:hover {
+  background-color: #f0f0f0;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 1em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.controls button {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid forestgreen;
+  background-color: white;
+  color: forestgreen;
+  border-radius: 4px;
+}
+
+.controls button:hover {
+  background-color: forestgreen;
+  color: white;
+}
+
+.scoreboard {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 18px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.scoreboard p {
+  margin: 0.5em 0;
+  font-weight: bold;
+}
