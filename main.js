@@ -50,13 +50,13 @@ function handlePlayerMove(cell, index) {
   cell.textContent = currentPlayer;
 
   if (checkWinner()) {
-    alert(`Player ${currentPlayer} wins!`);
+    alert(`Player ${currentPlayer} wins! Restart The Game.`);
     updateScore("player");
     return;
   }
 
   if (!gameState.includes("")) {
-    alert("It's a draw!");
+    alert("It's a draw! Restart The Game.");
     gameActive = false;
     updateRounds();
     return;
@@ -78,13 +78,13 @@ function handleSystemMove() {
   gridCells[moveIndex].textContent = currentPlayer;
 
   if (checkWinner()) {
-    alert(`System (${currentPlayer}) wins!`);
+    alert(`System (${currentPlayer}) wins! Restart The Game.`);
     updateScore("system");
     return;
   }
 
   if (!gameState.includes("")) {
-    alert("It's a draw!");
+    alert("It's a draw! Restart The Game");
     gameActive = false;
     updateRounds();
     return;
