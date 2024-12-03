@@ -5,6 +5,7 @@ const roundsDisplay = document.getElementById("rounds");
 const restartGameButton = document.getElementById("restartGame");
 const clearScoresButton = document.getElementById("clearScores");
 const difficultySelector = document.getElementById("difficulty");
+const responseElement = document.getElementById("gameResponse"); // Response element
 
 let currentPlayer = "X"; // Player is always "X"
 let gameActive = true;
@@ -50,13 +51,13 @@ function handlePlayerMove(cell, index) {
   cell.textContent = currentPlayer;
 
   if (checkWinner()) {
-    alert(`Player ${currentPlayer} wins! Restart The Game.`);
+    displayResponse(`Player ${currentPlayer} wins! Restart The Game.`);
     updateScore("player");
     return;
   }
 
   if (!gameState.includes("")) {
-    alert("It's a draw! Restart The Game.");
+    displayResponse("It's a draw! Restart The Game.");
     gameActive = false;
     updateRounds();
     return;
@@ -78,13 +79,13 @@ function handleSystemMove() {
   gridCells[moveIndex].textContent = currentPlayer;
 
   if (checkWinner()) {
-    alert(`System (${currentPlayer}) wins! Restart The Game.`);
+    displayResponse(`System (${currentPlayer}) wins! Restart The Game.`);
     updateScore("system");
     return;
   }
 
   if (!gameState.includes("")) {
-    alert("It's a draw! Restart The Game");
+    displayResponse("It's a draw! Restart The Game");
     gameActive = false;
     updateRounds();
     return;
@@ -194,10 +195,15 @@ clearScoresButton.addEventListener("click", () => {
   resetBoard();
 });
 
+function displayResponse(message) {
+  responseElement.textContent = message; // Update the response area
+}
+
 // Reset the game board
 function resetBoard() {
   gameState.fill("");
   currentPlayer = "X";
   gameActive = true;
   gridCells.forEach((cell) => (cell.textContent = ""));
+  displayResponse(""); // Clear the response area for the next round
 }
